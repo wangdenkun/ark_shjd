@@ -1,0 +1,9 @@
+{
+  "routerMap": [
+    {
+      "name": "HotelList",
+      "pageSourceFile": "src/main/ets/pages/index/HotelListPage.ets",
+      "buildFunction": "PageBuilder"
+    }
+  ]
+}

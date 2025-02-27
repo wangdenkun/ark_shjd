@@ -1,0 +1,14 @@
+{
+  "module": {
+    "name": "api_Library",
+    "type": "shared",
+    "description": "$string:shared_desc",
+    "deviceTypes": [
+      "phone",
+      "tablet",
+      "2in1",
+      "car"
+    ],
+    "deliveryWithInstall": true,
+  }
+}

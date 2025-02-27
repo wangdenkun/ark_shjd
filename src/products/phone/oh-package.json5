@@ -1,0 +1,16 @@
+{
+  "name": "phone",
+  "version": "1.0.0",
+  "description": "Please describe the basic information.",
+  "main": "",
+  "author": "",
+  "license": "",
+  "dependencies": {
+    "api_library_static": "file:../../commons/api_Library_Static",
+    "tools": "file:../../commons/tools",
+    "ui_library": "file:../../commons/UI_Library",
+    "@ohos/axios": "^2.2.4"
+  },
+  "devDependencies": {},
+  "dynamicDependencies": {}
+}

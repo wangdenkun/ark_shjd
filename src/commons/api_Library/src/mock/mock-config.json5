@@ -1,0 +1,5 @@
+{
+  "library": {
+    "source": "src/main/ets/api.ets"
+  },
+}

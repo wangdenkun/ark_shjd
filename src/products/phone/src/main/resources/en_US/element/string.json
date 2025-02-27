@@ -1,0 +1,32 @@
+{
+  "string": [
+    {
+      "name": "module_desc",
+      "value": "phone"
+    },
+    {
+      "name": "PhoneAbility_desc",
+      "value": "SHJD phone"
+    },
+    {
+      "name": "PhoneAbility_label",
+      "value": "SHJD"
+    },
+    {
+      "name": "permissionsInternetReason",
+      "value": "request network data"
+    },
+    {
+      "name": "index_tab_bar_index",
+      "value": "Index"
+    },
+    {
+      "name": "index_tab_bar_member",
+      "value": "Member"
+    },
+    {
+      "name": "index_tab_bar_mine",
+      "value": "Mine"
+    }
+  ]
+}

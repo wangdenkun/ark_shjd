@@ -1,0 +1,14 @@
+{
+  "module": {
+    "name": "api_Library_Static_test",
+    "type": "feature",
+    "deviceTypes": [
+      "default",
+      "tablet",
+      "2in1",
+      "car"
+    ],
+    "deliveryWithInstall": true,
+    "installationFree": false
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "string": [
+    {
+      "name": "module_desc",
+      "value": "手机端"
+    },
+    {
+      "name": "PhoneAbility_desc",
+      "value": "舜和酒店客户端"
+    },
+    {
+      "name": "PhoneAbility_label",
+      "value": "舜和酒店"
+    },
+    {
+      "name": "permissionsInternetReason",
+      "value": "请求网络数据"
+    },
+    {
+      "name": "index_tab_bar_index",
+      "value": "首页"
+    },
+    {
+      "name": "index_tab_bar_member",
+      "value": "会员"
+    },
+    {
+      "name": "index_tab_bar_mine",
+      "value": "我的"
+    }
+  ]
+}
