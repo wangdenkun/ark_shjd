@@ -41,10 +41,11 @@ struct HotelListPage {
       List({ space: 32 }) {
         ForEach(this.hotelList, (data: Hotel) => {
           ListItem() {
-            // Text(data.name)
             HotelCell({ hotel: data })
           }
           .padding({ left: 8, right: 8 })
+
+          // .width('100%')
         }, (data: Hotel) => data.id)
       }
       .width('100%')
@@ -61,6 +62,7 @@ struct HotelListPage {
       this.pageInfos.pop()
       return true
     })
+    .title('酒店列表')
   }
 }
 
@@ -70,6 +72,7 @@ function secondTS() {
   .fontSize(10)
   .fontColor(Color.Gray)
 }
+
 @Extend(Text)
 function cellTitleTs() {
   .fontSize(16)
@@ -81,31 +84,37 @@ function cellTitleTs() {
 struct HotelCell {
   @Prop hotel: Hotel
 
-
-
   build() {
-    Row() {
+    // Row() {
+    Flex({ direction: FlexDirection.Row, alignItems: ItemAlign.Stretch }) {
       Image(this.hotel.imageUrl)
-        .width('20%')
         .aspectRatio(1.2)
+        .layoutWeight(1)
         .attributeModifier(cardModifierFromLibrary8)
-        // .layoutWeight(1)
+        .objectFit(ImageFit.Cover)
       Blank().width(16)
-      Column() {
-        Row() {
+      Flex({ direction: FlexDirection.Column, alignItems: ItemAlign.Stretch }) {
+        Flex({ direction: FlexDirection.Row, alignItems: ItemAlign.Center }) {
           Text(this.hotel.name)
             .cellTitleTs()
-          Blank()
+            .maxLines(1)
+            .textOverflow({ overflow: TextOverflow.Ellipsis })// .flexGrow(1)
+            // .backgroundColor(Color.Green)
+            .flexGrow(1)
+          Blank().width(8)
           Text('555km')
             .secondTS()
+            .flexShrink(0) // https://developer.huawei.com/consumer/cn/forum/topic/0203144518225537833
+            .maxLines(1)
         }
-        .backgroundColor(Color.Blue)
-        // .justifyContent(FlexAlign.SpaceBetween)
-        // .backgroundColor(Tools.randomColor())
+        // .backgroundColor(Color.Pink)
 
         Text(this.hotel.address)
           .textOverflow({ overflow: TextOverflow.Ellipsis })
           .maxLines(1)
+
+        Blank()
+
         Row() {
           ForEach(this.hotel.labelList, (label: string) => {
             Text(label)
@@ -114,14 +123,14 @@ struct HotelCell {
           Text(this.hotel.price)
         }
         .justifyContent(FlexAlign.SpaceAround)
-        .backgroundColor(Color.Pink)
+        // .backgroundColor(Color.Pink)
       }
-      .flexGrow(1)
-      .backgroundColor(Color.Red)
-      // .layoutWeight(3)
+      .layoutWeight(3)
+      // .backgroundColor(Color.Red)
     }
     .width('100%')
-    .backgroundColor(Color.Yellow)
+    // .backgroundColor(Color.Yellow)
+    .backgroundImageSize(ImageSize.Auto)
   }
 }
 

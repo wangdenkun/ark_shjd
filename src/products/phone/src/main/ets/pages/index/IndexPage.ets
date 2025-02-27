@@ -88,7 +88,24 @@ export struct IndexPage {
   onTap(data: IndexPageEntryType) {
     // TODO: 根据不同的点击来源做跳转
     if (data === IndexPageEntryType.Hydf) {
-      this.pageInfos.pushPathByName("HotelList", null)
+
+      // TODO: 大尺寸时 Navigation如果不设置适配模式 百分百会有重复跳转的问题
+
+      // TODO: 这个queryNavDestinationInfo只有在NavDestination内部才能查询到
+      let queryNavInfo = this.queryNavDestinationInfo()
+      // TODO: 寻找更优的办法
+      console.log(`---> queryNavInfo:`,queryNavInfo)
+      console.log(`---> JSON.stringify(this.pageInfos):`,JSON.stringify(this.pageInfos))
+      let hotelListIndex = this.pageInfos.getIndexByName('HotelList')
+      console.log(`---> hotelListIndex:`,hotelListIndex,hotelListIndex.length,typeof hotelListIndex)
+      console.log(`---> this.pageInfos.size():`,this.pageInfos.size())
+      let canJumpHotelList = (hotelListIndex.length === 0 || this.pageInfos.size() === 0) && hotelListIndex[0] !== this.pageInfos.size() -1
+      console.log(`---> canJumpHotelList:`,canJumpHotelList)
+
+      if (canJumpHotelList) {
+        this.pageInfos.pushPathByName("HotelList", null)
+      }
+      // this.pageInfos.pushPathByName("HotelList", null)
     }
   }
 
